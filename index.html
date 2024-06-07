@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collapsible Section</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .collapsible {
+        width: 300px;
+        margin: 20px auto;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .collapsible-header {
+        background-color: #f1f1f1;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        width: 100%;
+        text-align: left;
+      }
+
+      .collapsible-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+      }
+
+      .content-item {
+        padding: 10px;
+        background-color: #fff;
+        border-top: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="collapsible">
+      <button class="collapsible-header">UAS API Genap 2023-2024</button>
+      <div class="collapsible-content">
+        <div class="content-item">
+          UAS API Genap 2023-2024 <br />
+          30 Mei <br />
+          99 poin
+        </div>
+        <div class="content-item">LIST Materi UAS</div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var collapsibleHeader = document.querySelector(".collapsible-header");
+        var collapsibleContent = document.querySelector(".collapsible-content");
+
+        collapsibleHeader.addEventListener("click", function () {
+          if (collapsibleContent.style.maxHeight) {
+            collapsibleContent.style.maxHeight = null;
+          } else {
+            collapsibleContent.style.maxHeight = collapsibleContent.scrollHeight + "px";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
